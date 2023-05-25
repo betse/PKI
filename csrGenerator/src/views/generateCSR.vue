@@ -89,6 +89,9 @@ h2{
     padding: .7rem;
     border-radius: 3px;
     width: 700px;
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    font-size: .9rem;
 }
 .dname .keysize{
     
@@ -110,6 +113,7 @@ input[type="submit"]{
     background: rgb(37, 126, 243);
     color: white;
     font-weight: bold;
+
 }
 input[type="radio"]{
     width: 25px;
