@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: #DED7F2;
+}
+.container{
+    margin: 6rem;
+    display: flex;
+    height: calc(100vh - 6rem - 6rem - 1.5rem);
+}
+.left{
+    width: 600px;
+    padding: 1rem;
+    min-width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.left .box{
+    display: flex;
+    border-radius: 13px;
+    
+    padding: 1.5rem;
+    /* box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.5); */
+    margin-right: 400px;
+    box-shadow: 0px 5px 10px 0px rgb(3 13 84 / 70%);
+}
+.circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    margin-right: 2rem;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle img{
+    background: none;
+    width: 50px;
+    height: 50px;
+}
+.text{
+    padding-top: 1rem;
+    white-space: nowrap;
+}
+.text h2{
+    font-size: 48px;
+}
+.box:nth-child(1) .circle{
+    background: #1945E3;
+}
+.box:nth-child(2) .circle{
+    background: #D8158D;
+}
+.box:nth-child(3) .circle{
+    background: #FDA400;
+}
+.right{
+    width: 50%;
+    /* padding: 1rem;
+    min-width: max-content; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    
+}
+.right h1
+{
+    font-size: 70px;
+}
+.right h1,h2,h4{
+    color: #2e2d2d;
+    white-space: nowrap;
+}
+.right p{
+    width: 50%;
+    line-height: 35px;
+    font-weight: 400;
+    color: #444242;
+}
+.right .numbers{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.right .numbers div:first-child{
+    margin-right: 2rem;
+}
