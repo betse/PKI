@@ -25,7 +25,7 @@
 .wrapper{
     width: 100%;
     padding: 0 3rem;
-    height: calc(100vh - 3.4rem);
+    height: 100vh;
     background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
     display: flex;
     justify-content: center;

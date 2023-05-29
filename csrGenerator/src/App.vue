@@ -2,13 +2,18 @@
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/insa.png" width="30" height="30" />
+    <div class="logo">
+      <img alt="Vue logo" class="logo" src="@/assets/insa.png" width="30" height="30" />
+      <span>Cert Tool</span>
+    </div>
+    
 
     <div class="wrapper">
       <nav>
         <li><RouterLink to="/">CSR Generation</RouterLink></li>
+        <li><RouterLink to="/gencert">Generate Certificate</RouterLink></li>
         <li><RouterLink to="/login">Login</RouterLink></li>
-        <li><RouterLink to="signup">Register</RouterLink></li>
+        <li><RouterLink to="/signup">Register</RouterLink></li>
       </nav>
     </div>
   </header>
@@ -19,11 +24,22 @@
 <style scoped>
 header {
   display: flex;
+  position: fixed;
+  top: 0;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   background: #e3eeff;
   padding: 0.7rem 3rem;
+}
+.logo{
+  display: flex;
+  align-items: center;
+}
+.logo span{
+  margin-left: .5rem;
+  color: rgb(37, 126, 243);
+  font-weight: 900;
 }
 nav {
   display: flex;
