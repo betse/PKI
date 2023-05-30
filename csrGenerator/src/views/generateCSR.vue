@@ -1,27 +1,27 @@
 <template>
   <div class="content">
     <div class="wrapper">
-      <h2>Generate a Certificate Signing Request</h2>
+      <h3>Generate a Certificate Signing Request</h3>
 
       <div class="dname">
         <span>Common Name </span>
-        <input type="text" v-model="model.csr.commonName"/>
+        <input type="text" v-model="model.csr.commonName" />
       </div>
       <div class="dname">
         <span>Organization </span>
-        <input type="text" v-model="model.csr.org"/>
+        <input type="text" v-model="model.csr.org" />
       </div>
       <div class="dname">
         <span>Organizational Unit </span>
-        <input type="text" v-model="model.csr.orgUnit"/>
+        <input type="text" v-model="model.csr.orgUnit" />
       </div>
       <div class="dname">
         <span>Locality </span>
-        <input type="text" v-model="model.csr.locality"/>
+        <input type="text" v-model="model.csr.locality" />
       </div>
       <div class="dname">
         <span>State </span>
-        <input type="text" v-model="model.csr.state"/>
+        <input type="text" v-model="model.csr.state" />
       </div>
       <div class="dname">
         <span>Country </span>
@@ -35,13 +35,31 @@
         <span>Key Size </span>
         <div class="keysize">
           <label class="form-radio">
-            <input type="radio" name="keysize" id="" value="1024" v-model="model.csr.keySize"/>1024
+            <input
+              type="radio"
+              name="keysize"
+              id=""
+              value="1024"
+              v-model="model.csr.keySize"
+            />1024
           </label>
           <label class="form-radio">
-            <input type="radio" name="keysize" id="" value="2048" v-model="model.csr.keySize"/>2048
+            <input
+              type="radio"
+              name="keysize"
+              id=""
+              value="2048"
+              v-model="model.csr.keySize"
+            />2048
           </label>
           <label class="form-radio">
-            <input type="radio" name="keysize" id="" value="4096" v-model="model.csr.keySize" />4096
+            <input
+              type="radio"
+              name="keysize"
+              id=""
+              value="4096"
+              v-model="model.csr.keySize"
+            />4096
           </label>
         </div>
       </div>
@@ -51,38 +69,36 @@
   </div>
 </template>
 <script>
-import countriesData from '../assets/countries.json'
+import countriesData from "../assets/countries.json";
 export default {
   data() {
     return {
-        model : {
-            csr: {
-                commonName: '',
-                org: '',
-                orgUnit: '',
-                locality: '',
-                state: '',
-                selectedCountry: '',
-                keySize: "2048"
-            },
-            
+      model: {
+        csr: {
+          commonName: "",
+          org: "",
+          orgUnit: "",
+          locality: "",
+          state: "",
+          selectedCountry: "",
+          keySize: "2048",
         },
-       // Stores the selected country code
-      countries: []
+      },
+      // Stores the selected country code
+      countries: [],
     };
   },
   mounted() {
     this.loadCountries();
   },
   methods: {
-    loadCountries(){
-        this.countries = countriesData;
+    loadCountries() {
+      this.countries = countriesData;
     },
-    generatecsr(){
-        console.log(this.model.csr)
-
-    }
-  }
+    generatecsr() {
+      console.log(this.model.csr);
+    },
+  },
 };
 </script>
 
@@ -90,7 +106,7 @@ export default {
 .content {
   width: 100%;
   padding: 0 3rem;
-  height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,10 +126,12 @@ export default {
   /* box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px; */
   /* border: 1px solid black; */
 }
-h2 {
+h3 {
   margin-bottom: 1rem;
   font-weight: bold;
   color: #555;
+  padding-left: 0.5rem;
+  border-left: 5px solid rgb(37, 126, 243);
 }
 .dname {
   width: 900px;
@@ -129,7 +147,8 @@ h2 {
   color: #555;
   font-weight: 500;
 }
-.dname input, select {
+.dname input,
+select {
   border: none;
   background: var(--vt-c-white-mute);
   padding: 0.7rem;

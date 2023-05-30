@@ -6,7 +6,6 @@
       <img alt="Vue logo" class="logo" src="@/assets/insa.png" width="30" height="30" />
       <span>Cert Tool</span>
     </div>
-    
 
     <div class="wrapper">
       <nav>
@@ -32,12 +31,12 @@ header {
   background: #e3eeff;
   padding: 0.7rem 3rem;
 }
-.logo{
+.logo {
   display: flex;
   align-items: center;
 }
-.logo span{
-  margin-left: .5rem;
+.logo span {
+  margin-left: 0.5rem;
   color: rgb(37, 126, 243);
   font-weight: 900;
 }
@@ -51,7 +50,7 @@ li {
   color: var(--vt-c-black);
   font-weight: 500;
 }
-li a{
+li a {
   text-decoration: none;
   color: var(--vt-c-text-light-1);
   font-weight: 500;

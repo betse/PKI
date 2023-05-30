@@ -4,8 +4,8 @@
       <p>
         Submit your Certificate Signing Request(CSR) to be signed by default certificate.
       </p>
-      <textarea name="csr" id="" cols="75" rows="16"></textarea> <br>
-      <input type="submit" value="Submit">
+      <textarea name="csr" id="" cols="75" rows="16"></textarea> <br />
+      <input type="submit" value="Submit" />
     </div>
     <div class="csr-summary" v-if="rescsr">
       <h3>Certificate Signing Request Summary</h3>
@@ -31,41 +31,39 @@
 </template>
 <script>
 export default {
-  data (){
-    return{
-      rescsr : false
-    }
-    
-  }
-
-}
+  data() {
+    return {
+      rescsr: false,
+    };
+  },
+};
 </script>
 <style scoped>
-.wrapper{
-    padding: 3rem;
-    
+.wrapper {
+  padding: 3rem;
 }
-.csr{
-    display: inline-block;
-    padding: 2rem 0;
+.csr {
+  display: inline-block;
+  padding: 2rem 0;
 }
-p, textarea, input{
-  margin: .8rem 0;
+p,
+textarea,
+input {
+  margin: 0.8rem 0;
 }
- textarea{
+textarea {
   border: 1px solid #dde;
   border-radius: 6px;
- }
- input[type="submit"]{
-    background: var(--vt-c-white);
-    border: none;
-    padding: .7rem 1.5rem;
-    margin-top: 1.5rem;
-    border-radius: 6px;
-    font-family: 'Open Sans', sans-serif;
-    background: rgb(37, 126, 243);
-    color: white;
-    font-weight: bold;
-
+}
+input[type="submit"] {
+  background: var(--vt-c-white);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 6px;
+  font-family: "Open Sans", sans-serif;
+  background: rgb(37, 126, 243);
+  color: white;
+  font-weight: bold;
 }
 </style>
