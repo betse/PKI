@@ -6,16 +6,22 @@
           <h2>Sign up</h2>
           <span>Enter username and password to Register</span>
         </div>
+        <Form :validation-schema="schema">
         <div class="input">
           <div class="uname">
-            <span>Username</span> <input type="text" placeholder="Username" />
+            <span>Username</span>
+             <Field name="username" type="text" placeholder="Username" v-model="this.model.user.username"/>
+             <ErrorMessage name="username" class="error-feedback" />
           </div>
           <div class="email">
-            <span>Email</span> <input type="email" placeholder="Email" />
+            <span>Email</span>
+            <Field name="email" type="email" placeholder="Email" v-model="this.model.user.email"/>
+            <ErrorMessage name="email" class="error-feedback" />
           </div>
           <div class="pass">
             <span>Password</span>
-            <input type="password" name="" id="" placeholder="Password" />
+            <Field name="password" type="password" placeholder="Password" v-model="this.model.user.password"/>
+            <ErrorMessage name="password" class="error-feedback" />
           </div>
           <input class="submit" type="submit" value="Sign up" />
         </div>
@@ -25,10 +31,49 @@
             <RouterLink to="/login"><span> Login </span> </RouterLink>
           </p>
         </div>
+        </Form>
       </div>
     </div>
   </div>
 </template>
+<script>
+import { Form, Field, ErrorMessage } from "vee-validate";
+import * as yup from "yup";
+export default {
+    components: {
+    Form,
+    Field,
+    ErrorMessage,
+  },
+  data() {
+    const schema = yup.object().shape({
+      username: yup.string().required("Username is required!"),
+      email: yup
+        .string()
+        .required("Email is required!")
+        .email("Email is invalid!")
+        .max(50, "Must be maximum 50 characters!"),
+      password: yup
+        .string()
+        .required("Password is required!")
+        .min(6, "use at least 6 characters"),
+    });
+    return {
+      schema,
+      model: {
+        user: {
+          username: "",
+          email: "",
+          password: "",
+        },
+      },
+      message: "",
+    };
+  },
+}
+</script>
+
+
 <style scoped>
 .wrapper {
   height: 100%;
@@ -60,6 +105,9 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border-radius: 6px;
   padding: 2rem;
+}
+form{
+    width: 100%;
 }
 .title {
   height: 110px;
@@ -132,5 +180,10 @@ input:focus {
 }
 .register a {
   text-decoration: none;
+}
+.error-feedback {
+    padding-top: .5rem;
+    font-size: .8rem;
+  color: rgb(255, 4, 4);
 }
 </style>

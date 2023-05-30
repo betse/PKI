@@ -2,10 +2,10 @@
 
 <template>
   <header>
-    <div class="logo">
+    <RouterLink to="/" class="logo">
       <img alt="Vue logo" class="logo" src="@/assets/insa.png" width="30" height="30" />
       <span>Cert Tool</span>
-    </div>
+    </RouterLink>
 
     <div class="wrapper">
       <nav>
@@ -30,6 +30,9 @@ header {
   width: 100%;
   background: #e3eeff;
   padding: 0.7rem 3rem;
+}
+header a {
+  text-decoration: none;
 }
 .logo {
   display: flex;

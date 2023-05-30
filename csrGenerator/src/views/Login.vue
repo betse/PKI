@@ -6,13 +6,17 @@
           <h2>Login</h2>
           <span>Enter your username and password to login</span>
         </div>
+        <Form :validation-schema="schema">
         <div class="input">
           <div class="uname">
-            <span>Username</span> <input type="text" placeholder="username" />
+            <span>Username</span> 
+            <Field type="text" name="username" v-model="this.model.user.username" placeholder="username" />
+            <ErrorMessage name="username" class="error-feedback" />
           </div>
           <div class="pass">
             <span>Password</span>
-            <input type="password" name="" id="" placeholder="Password" />
+            <Field type="password" name="password" v-model="this.model.user.password" placeholder="Password" />
+            <ErrorMessage name="password" class="error-feedback" />
           </div>
           <input class="submit" type="submit" value="Login" />
         </div>
@@ -22,10 +26,42 @@
             <RouterLink to="/signup"><span>Create New</span></RouterLink>
           </p>
         </div>
+    </Form>
       </div>
     </div>
   </div>
 </template>
+<script>
+import { Form, Field, ErrorMessage } from "vee-validate";
+import * as yup from "yup";
+export default {
+    components: {
+    Form,
+    Field,
+    ErrorMessage,
+  },
+  data() {
+    const schema = yup.object().shape({
+      username: yup.string().required("Username is required!"),
+      password: yup
+        .string()
+        .required("Password is required!")
+        .min(6, "use at least 6 characters"),
+    });
+    return {
+      schema,
+      model: {
+        user: {
+          username: "",
+          password: "",
+        },
+      },
+      message: "",
+    };
+  },
+}
+</script>
+
 <style scoped>
 .wrapper {
   height: 100%;
@@ -56,6 +92,9 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border-radius: 6px;
   padding: 2rem;
+}
+form{
+    width: 100%;
 }
 .title {
   height: 110px;
@@ -127,5 +166,10 @@ input:focus {
 }
 .register a {
   text-decoration: none;
+}
+.error-feedback {
+    padding-top: .5rem;
+    font-size: .8rem;
+  color: rgb(255, 4, 4);
 }
 </style>
